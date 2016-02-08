@@ -6,8 +6,6 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "moduleResolution": "node",
-    "outDir": "dist",
-    "rootDir": ".",
     "removeComments": false,
     "noImplicitAny": true,
     "suppressImplicitAnyIndexErrors": true
