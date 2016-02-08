@@ -4,7 +4,7 @@
   "author": "Aysegul Yonet",
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/Yonet/ng2-forwardJS-app.git"
   },
   "scripts": {
     "tsc": "tsc",
