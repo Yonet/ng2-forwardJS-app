@@ -3,6 +3,11 @@
  */
 import { Component } from 'angular2/core';
 
+interface Project {
+    id: number;
+    name: string;
+}
+
 @Component({
     selector: 'projects-list',
     templateUrl: 'app/projects/projects.component.html',
@@ -10,5 +15,13 @@ import { Component } from 'angular2/core';
 })
 
 export class ProjectsComponent {
+    /**
+     * Variable name is 'project' and type is 'Project' defined in the interface
+     * @type {{id: number, name: string}}
+     */
+    public project: Project = {
+        id: 1,
+        name: "Demo Project"
+    }
 
 }
