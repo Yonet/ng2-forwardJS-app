@@ -2,12 +2,28 @@
  * Created by yoneta on 2/7/16.
  */
 import { Component } from 'angular2/core';
+import { ProjectsComponent } from './projects/projects.component'
 
 @Component({
-    selector: 'my-app'
-    template:'<h1>{{title}}</h1>'
+    selector: 'my-app',
+    directives: [ProjectsComponent],
+    template: `
+    <div>
+        <h1>{{title}}</h1>
+        <projects-list></projects-list>
+    </div>
+
+    `,
+    styles: [`
+        h1 {
+            border-bottom: 1px solid #ddd;
+            padding: 10px;
+        }
+    `]
 })
 
 export class AppComponent {
-    public title = 'Projects';
+
+    public title = 'ForwardJS App';
+
 }
