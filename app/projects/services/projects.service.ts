@@ -5,6 +5,6 @@ import {Injectable} from "angular2/core";
 @Injectable()
 export class ProjectsService {
     getProjects() {
-        return PROJECTS;
+        return Promise.resolve(PROJECTS);
     }
 }

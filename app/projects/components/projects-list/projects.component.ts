@@ -6,8 +6,6 @@ import { ProjectsService } from 'app/projects/services/projects.service';
 import { Component, OnInit } from 'angular2/core';
 
 
-
-
 @Component({
     selector: 'projects-list',
     templateUrl: 'app/projects/components/projects-list/projects.component.html',
@@ -16,21 +14,23 @@ import { Component, OnInit } from 'angular2/core';
 })
 
 export class ProjectsComponent implements OnInit {
-    public title = "Projects List";
+    public title = "Projects List View";
     public newProject = '';
-    public projects: Project[];
+    public projects:Project[];
 
-    constructor(private _projectsService: ProjectsService){}
-
-    getProjects(){
-        this.projects = this._projectsService.getProjects();//.then(projects =>  projects);
+    constructor(private _projectsService:ProjectsService) {
     }
 
-    ngOnInit(){
-        this.getProjects();
+    getProjects() {
+        this._projectsService.getProjects().then(projects => this.projects = projects);
+        return this.projects;
     }
 
-    onSubmit(newName){
+    ngOnInit() {
+        this.projects = this.getProjects();
+    }
+
+    onSubmit(newName) {
         const i = this.projects.length + 1;
         this.projects.push({id: i, name: newName});
         console.log('newProject is', this.newProject);
