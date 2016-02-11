@@ -1,5 +1,8 @@
-<h1>Projects</h1>
-<input type="text" placeholder="Project name" [(ngModel)]="project.name">
+<h1>{{ title }}</h1>
+<form (submit)="onSubmit(projectName.value)">
+    <input type="text" placeholder="Project name" [(ngModel)]="newProject" #projectName>
+</form>
+
 <ul>
-    <li>{{ project.name }}</li>
+    <li *ngFor="#project of projects">Week {{ project.id }}: {{ project.name }}</li>
 </ul>
