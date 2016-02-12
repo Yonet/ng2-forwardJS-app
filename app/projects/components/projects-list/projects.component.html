@@ -4,5 +4,5 @@
 </form>
 
 <ul>
-    <li *ngFor="#project of projects">Week {{ project.id }}: {{ project.name }}</li>
+    <li *ngFor="#project of projects" (click)="goToDetail(project)">Week {{ project.id }}: {{ project.name }}</li>
 </ul>

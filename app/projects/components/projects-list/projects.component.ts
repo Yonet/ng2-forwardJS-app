@@ -1,24 +1,25 @@
 /**
  * Created by yoneta on 2/7/16.
  */
-import {Project} from 'app/projects/services/project-model';
-import { ProjectsService } from 'app/projects/services/projects.service';
 import { Component, OnInit } from 'angular2/core';
+import { Router } from "angular2/router";
+
+import { Project } from 'app/projects/services/project-model';
+import { ProjectsService } from 'app/projects/services/projects.service';
+
 
 
 @Component({
     selector: 'projects-list',
     templateUrl: 'app/projects/components/projects-list/projects.component.html',
-    stylesUrl: 'app/projects/components/projects-list/projects.component.css',
-    providers: [ProjectsService]
+    stylesUrl: 'app/projects/components/projects-list/projects.component.css'
 })
 
 export class ProjectsComponent implements OnInit {
     public title = "Projects List View";
     public newProject = '';
-    public projects:Project[];
-
-    constructor(private _projectsService:ProjectsService) {
+    public projects: Project[];
+    constructor(private _projectsService: ProjectsService, private _router: Router) {
     }
 
     getProjects() {
@@ -35,6 +36,11 @@ export class ProjectsComponent implements OnInit {
         this.projects.push({id: i, name: newName});
         console.log('newProject is', this.newProject);
         this.newProject = '';
+    }
+
+    goToDetail(project) {
+
+        this._router.navigate(['Project', { id: project.id }]);
     }
 
 }
