@@ -4,9 +4,8 @@
 import { Component, OnInit } from 'angular2/core';
 import { Router } from "angular2/router";
 
-import { Project } from 'app/projects/services/project-model';
-import { ProjectsService } from 'app/projects/services/projects.service';
-
+import { Project } from '../../services/project-model';
+import { ProjectsService } from '../../services/projects.service';
 
 
 @Component({
@@ -16,10 +15,14 @@ import { ProjectsService } from 'app/projects/services/projects.service';
 })
 
 export class ProjectsComponent implements OnInit {
-    public title = "Projects List View";
-    public newProject = '';
-    public projects: Project[];
+
+    title: string;
+    newProject: string;
+    projects: Project[];
+
     constructor(private _projectsService: ProjectsService, private _router: Router) {
+        this.title = "Projects List View";
+        this.newProject = '';
     }
 
     getProjects() {
@@ -39,7 +42,6 @@ export class ProjectsComponent implements OnInit {
     }
 
     goToDetail(project) {
-
         this._router.navigate(['Project', { id: project.id }]);
     }
 

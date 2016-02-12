@@ -15,7 +15,6 @@ import { ProjectDetailComponent } from "./projects/components/projects-detail/pr
     template: `
     <div>
         <h1>{{title}}</h1>
-        <!--<projects-list></projects-list>-->
         <router-outlet></router-outlet>
     </div>
     `,
