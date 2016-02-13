@@ -1,0 +1,17 @@
+<div *ngIf="project">
+	<md-content class="examples" layout-padding md-scroll-y>
+		<component-page>
+			<h1 class="examples-title">{{ title }}</h1>
+			<div class="doc-demo-content doc-content">
+				<div flex layout="column">
+					<section class="demo-container md-whiteframe-z1">
+						<div class="md-toolbar-tools">
+					        <p>Week {{ project.id}} - {{ project.name }}</p>
+						</div>
+				        <p>{{ project | json }}</p>
+ 					</section>
+				</div>
+			</div>
+		</component-page>
+	</md-content>
+</div>

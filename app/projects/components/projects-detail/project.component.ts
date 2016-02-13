@@ -8,14 +8,8 @@ import {Project} from "../../services/project-model";
 
 @Component({
     selector: 'project-detail',
-    template: `
-    <div *ngIf="project">
-        <h2>{{ title }}</h2>
-        <p>Week {{ project.id}} - {{ project.name }}</p>
-        <p>{{ project | json }}</p>
-    </div>
-
-    `
+    templateUrl: 'app/projects/components/projects-detail/project.component.html',
+    styleUrls: ['app/projects/components/projects-list/projects.component.css']
 })
 
 export class ProjectDetailComponent implements OnInit {
