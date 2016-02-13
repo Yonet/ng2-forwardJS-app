@@ -3,6 +3,7 @@
  */
 import { Component, OnInit } from 'angular2/core';
 import { Router } from "angular2/router";
+import {MATERIAL_DIRECTIVES, MATERIAL_PROVIDERS} from "ng2-material/all";
 
 import { Project } from '../../services/project-model';
 import { ProjectsService } from '../../services/projects.service';
@@ -11,7 +12,7 @@ import { ProjectsService } from '../../services/projects.service';
 @Component({
     selector: 'projects-list',
     templateUrl: 'app/projects/components/projects-list/projects.component.html',
-    stylesUrl: 'app/projects/components/projects-list/projects.component.css'
+    styleUrls: ['app/projects/components/projects-list/projects.component.css']
 })
 
 export class ProjectsComponent implements OnInit {

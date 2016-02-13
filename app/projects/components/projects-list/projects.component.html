@@ -1,8 +1,28 @@
-<h1>{{ title }}</h1>
-<form (submit)="onSubmit(projectName.value)">
-    <input type="text" placeholder="Project name" [(ngModel)]="newProject" #projectName>
-</form>
-
-<ul>
-    <li *ngFor="#project of projects" (click)="goToDetail(project)">Week {{ project.id }}: {{ project.name }}</li>
-</ul>
+	<md-content class="examples" layout-padding md-scroll-y>
+		<component-page>
+			<h1 class="examples-title">{{ title }}</h1>
+			<div class="doc-demo-content doc-content">
+				<div flex layout="column">
+					<section class="demo-container md-whiteframe-z1">
+						<div class="md-toolbar-tools">
+							<md-input-container class="md-block" flex-gt-sm>
+							<form (submit)="onSubmit(projectName.value)">
+								<label>Project name</label>
+							    <input md-input type="text" placeholder="" [(ngModel)]="newProject" #projectName>
+							</form>
+    				      	</md-input-container>
+						</div>
+						<md-list>
+					      <md-list-item class="md-1-line"  *ngFor="#project of projects" (click)="goToDetail(project)">
+					        <!-- <img [src]="item.face+'?'+index" class="md-avatar" alt="{{item.who}}"/> -->
+					        <div class="md-list-item-text" layout="column">
+					          <p>Week {{ project.id }}: {{ project.name }}</p>
+					        </div>
+					      </md-list-item>
+					      <md-divider></md-divider>
+					  </md-list>
+ 					</section>
+				</div>
+			</div>
+		</component-page>
+	</md-content>

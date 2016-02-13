@@ -3,6 +3,7 @@
  */
 import { Component } from 'angular2/core';
 import { RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS } from 'angular2/router';
+import {MATERIAL_DIRECTIVES, MATERIAL_PROVIDERS} from "ng2-material/all";
 
 import { Project } from './projects/services/project-model';
 import { ProjectsService } from './projects/services/projects.service';
@@ -14,14 +15,13 @@ import { ProjectDetailComponent } from "./projects/components/projects-detail/pr
     selector: 'my-app',
     template: `
     <div>
-        <h1>{{title}}</h1>
+        <md-toolbar class="fixed-toolbar"><div class="md-toolbar-tools"><span class="verbose-title">{{title}}</span></div></md-toolbar>
         <router-outlet></router-outlet>
     </div>
     `,
     styles: [`
-        h1 {
-            border-bottom: 1px solid #ddd;
-            padding: 10px;
+        .verbose-title{
+            font-size:20px;
         }
     `],
     directives: [ProjectsComponent, ROUTER_DIRECTIVES],
