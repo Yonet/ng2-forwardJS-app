@@ -6,6 +6,10 @@ h1{
     margin-bottom: 40px;
 }
 
+md-list-item{
+	padding-left:10px;
+}
+
 p{
 	padding-left:10px;
 }
