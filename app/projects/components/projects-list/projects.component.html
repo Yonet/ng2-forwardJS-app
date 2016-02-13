@@ -12,11 +12,11 @@
     				      	</md-input-container>
 						</div>
 						<md-list>
-					      <md-list-item class="md-1-line"  *ngFor="#project of projects" (click)="goToDetail(project)">
-					        <!-- <img [src]="item.face+'?'+index" class="md-avatar" alt="{{item.who}}"/> -->
+					      <md-list-item class="md-1-line"  *ngFor="#project of projects | done" (click)="goToDetail(project)">
 					        <i class="material-icons">code</i>
 					        <div class="md-list-item-text" layout="column">
-					          <p>Week {{ project.id }}: {{ project.name }}</p>
+					          <p>Week {{ project.id }}: {{ project.name  | uppercase}} - {{ project.status }}</p>
+
 					        </div>
 					      </md-list-item>
 					      <md-divider></md-divider>

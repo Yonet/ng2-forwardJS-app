@@ -7,12 +7,14 @@ import {MATERIAL_DIRECTIVES, MATERIAL_PROVIDERS} from "ng2-material/all";
 
 import { Project } from '../../services/project-model';
 import { ProjectsService } from '../../services/projects.service';
+import {DonePipe} from "../../pipes/done.pipe";
 
 
 @Component({
     selector: 'projects-list',
     templateUrl: 'app/projects/components/projects-list/projects.component.html',
-    styleUrls: ['app/projects/components/projects-list/projects.component.css']
+    styleUrls: ['app/projects/components/projects-list/projects.component.css'],
+    pipes:[DonePipe]
 })
 
 export class ProjectsComponent implements OnInit {
@@ -37,7 +39,7 @@ export class ProjectsComponent implements OnInit {
 
     onSubmit(newName) {
         const i = this.projects.length + 1;
-        this.projects.push({id: i, name: newName});
+        this.projects.push({id: i, name: newName, status: 'Not started'});
         console.log('newProject is', this.newProject);
         this.newProject = '';
     }
