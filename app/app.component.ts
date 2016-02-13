@@ -4,7 +4,7 @@
 import { Component } from 'angular2/core';
 
 @Component({
-    selector: 'my-app'
+    selector: 'my-app',
     template:'<h1>{{title}}</h1>'
 })
 
