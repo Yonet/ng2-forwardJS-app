@@ -4,12 +4,14 @@ import {MATERIAL_DIRECTIVES, MATERIAL_PROVIDERS} from "ng2-material/all";
 
 import { ProjectsService } from "../../services/projects.service";
 import {Project} from "../../services/project-model";
+import {EditProjectComponent} from "../project-edit/edit.component";
 
 
 @Component({
     selector: 'project-detail',
     templateUrl: 'app/projects/components/projects-detail/project.component.html',
-    styleUrls: ['app/projects/components/projects-list/projects.component.css']
+    styleUrls: ['app/projects/components/projects-list/projects.component.css'],
+    directives: [EditProjectComponent]
 })
 
 export class ProjectDetailComponent implements OnInit {

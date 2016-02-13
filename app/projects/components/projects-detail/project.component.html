@@ -9,6 +9,7 @@
 					        <p>Week {{ project.id}} - {{ project.name }}</p>
 						</div>
 				        <p>{{ project | json }}</p>
+						<edit-detail [detail]="project" (detailChanged)="project=$event"></edit-detail>
  					</section>
 				</div>
 			</div>
